@@ -391,15 +391,15 @@ int TXN_PostOTP::registerUser(APIDBLib* conn) {
         queryStatement->executeUpdate();
     }
     catch (const sql::SQLException& e) {
-        std::cerr << "Sql Error occurred while validating onetimetoken:" << e.what() << std::endl;
+        std::cerr << "Sql Error occurred while registerting user:" << e.what() << std::endl;
         return F_DATABASE_EXCEPTION;
     }
     catch (const std::exception& e) {
-        std::cerr << "Std Error occurred while validating onetimetoken:" << e.what() << std::endl;
+        std::cerr << "Std Error occurred while registerting user:" << e.what() << std::endl;
         return F_SOMETHING_WENT_WRONG;
     }
     catch (...) {
-        std::cerr << "Unknown Error occurred while validating onetimetoken" << std::endl;
+        std::cerr << "Unknown Error occurred while registerting user" << std::endl;
         return F_SOMETHING_WENT_WRONG;
     }
     return SUCCESS;
