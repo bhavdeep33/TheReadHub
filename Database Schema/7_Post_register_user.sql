@@ -1,5 +1,5 @@
 DELIMITER $$
-USE thereadhub;
+
 CREATE PROCEDURE prc_register_user(
     IN inputUserId VARCHAR(8)
 )
