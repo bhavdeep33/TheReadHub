@@ -1,6 +1,5 @@
 DELIMITER $$
 
-USE thereadhub;
 CREATE PROCEDURE prc_check_emailid_availability(
     IN inputEmailId VARCHAR(254)
 )
