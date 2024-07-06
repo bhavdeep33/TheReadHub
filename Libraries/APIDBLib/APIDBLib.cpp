@@ -153,7 +153,6 @@ void ConnectionPoolFactory::manageConnectionPool(ConnectionPool* connectionPoolO
 Cpool::~Cpool(){}
 
 ConnectionPool::ConnectionPool(DbInfo dbInfo,int poolSize, int lotSize) {
-    std::cout << "Creating connection" << std::endl;
     this->dbInfo = dbInfo;
     this->poolSize = poolSize;
     this->lotSize = lotSize;
@@ -162,8 +161,6 @@ ConnectionPool::ConnectionPool(DbInfo dbInfo,int poolSize, int lotSize) {
 }
 
 ConnectionPool::~ConnectionPool() {
-    std::cout << "connectionpool destructor called" << std::endl;
-    std::cout << "Connection pool size: " << connList.size() << std::endl;
     std::list<APIDBLib*>::iterator it;
     for (it = connList.begin(); it != connList.end(); ++it) {
         delete* it;
